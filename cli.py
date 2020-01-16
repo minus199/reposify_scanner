@@ -1,3 +1,5 @@
+import logging
+
 def __init_parser():
     import argparse
     parser = argparse.ArgumentParser(description="CVE scanning suite", epilog="Please let me know if you have any questions. I'm aware there is much room for improvments :)")
@@ -15,7 +17,7 @@ if (__name__ == "__main__"):
     _parser = __init_parser()
     _input_args = _parser.parse_args()
 
-    import logging
+    
     import json
     from lib.services.cve_core_service import CveIndexingService
     from lib.services.scanning_service import ScanningService

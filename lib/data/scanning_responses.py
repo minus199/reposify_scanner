@@ -12,7 +12,7 @@ class ServerMetadata:
             self.runtime_v = runtime_v
             
         try:
-            self.major_runtime_v = self.runtime_v.split(".")[0]
+            self.major_runtime_v = "*" #self.runtime_v.split(".")[0]
         except:
             self.major_runtime_v = "*"
             

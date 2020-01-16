@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 
 class CveIndexingService:
     def find_by_runtime_version(self, rt: str, v: str) -> List[CveItem]:
-        cpe_criteria_ = 'cpe:2.3:a' + (f':{rt}:' if rt else '') + (v if v else '')
+        cpe_criteria_ = 'cpe:2.3:a:' + (f'{rt}:' if rt else '')*2 + (v if v else '')
         # TODO: Search with wild cards in cpe
         
         log.info(f"Searching for {cpe_criteria_}")
