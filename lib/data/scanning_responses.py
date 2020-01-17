@@ -1,7 +1,9 @@
 from lib.data.cve_models import CveItem
 from typing import List
 
-
+"""
+Container for extracted server info
+"""
 class ServerMetadata:
     def __init__(self, host, runtime, runtime_v = None):
         self.host = host
@@ -16,11 +18,16 @@ class ServerMetadata:
         except:
             self.major_runtime_v = "*"
             
-            
+    """
+    Try to get header by passed name, if not found, then by the same string but lower case
+    """        
     @staticmethod
     def find_header_case_insensitive(headers, header_name: str):
         return headers.get(header_name, headers.get(header_name.lower(), None))
         
+    """
+    Build instance from raw headers
+    """
     @staticmethod
     def parse_from_raw_headers(headers, req_url):
         match_header = lambda header: ServerMetadata.find_header_case_insensitive(headers, header) 

@@ -1,6 +1,8 @@
 from typing import List, Set
 
-
+"""
+most of this file was generated 
+"""
 class CpeMatch:
     vulnerable: bool
     cpe23Uri: str
